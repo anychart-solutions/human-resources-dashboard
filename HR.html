@@ -1,0 +1,114 @@
+<!--
+    This is a demo of AnyStock http://www.anychart.com/products/anystock/ Charts Feature: Drawing Tools / Annotations
+    Documentation: http://docs.anychart.com/latest/Stock_Charts/Overview
+    API: https://api.anychart.com/latest/anychart.charts.Stock
+    Support: http://www.anychart.com/support/
+    Contacts: http://www.anychart.com/company/
+
+    http://www.anychart.com/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description"
+          content="AnyStock offers a large set of features that allow you to build your online financial portal and one of the most exciting features is the ability to draw/display on the chart so called drawing tools or, as they are called in our documentation documentation and settings, annotations.">
+    <meta name="keywords" content="AnyChart,AnyStock,Annotation,Drawing Tools,Technical Analysis,Security Analysis">
+    <meta name="author" content="anychart.com">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Human Resources Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- AnyChart UI -->
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css">
+    <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css">
+
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="loader-wrapper" class="anychart-loader">
+    <div class="rotating-cover">
+        <div class="rotating-plane">
+            <div class="chart-row"><span class="chart-col green"></span><span class="chart-col orange"></span><span
+                    class="chart-col red"></span></div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="chart_container">
+                <div class="chart" id="manufacture-dept"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="chart_container">
+                <div class="chart" id="sales-dept"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 ">
+            <div class="chart_container">
+                <div class="chart" id="engineering-dept"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 ">
+            <div class="chart_container">
+                <div class="chart" id="finance-dept"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="chart_container">
+                <div class="chart" id="salary"></div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="chart_container">
+                <div class="chart" id="staff-composition"></div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="chart_container">
+                <div class="chart" id="employment-date"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="chart_container">
+                <div class="chart" id="score-card"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+
+<script src="js/HR-data.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
