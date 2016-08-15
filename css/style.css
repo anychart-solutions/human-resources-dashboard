@@ -2,6 +2,10 @@ body {
     background-color: #f6f6f6;
 }
 
+body.iframe {
+    background-color: #fff;
+}
+
 .wrapper {
     padding: 15px;
 }
