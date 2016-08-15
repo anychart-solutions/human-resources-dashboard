@@ -358,14 +358,6 @@
         chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
         chart.tooltip().displayMode('union');
 
-        function createLabels(labels) {
-            labels.enabled(true);
-            labels.position('center');
-            labels.anchor('center');
-            labels.fontColor('white');
-            labels.fontWeight('bold');
-        }
-
         // create first series with mapped data
         var series_communication_skills = chart.column(series_communication_skills_data);
         series_communication_skills.name('Communication Skills');
@@ -392,11 +384,11 @@
 
         // create series empty, for eval sum statistic and
         var series_empty = chart.column(series_empty_data);
-
         series_empty.fill(null);
         series_empty.stroke(null);
         series_empty.legendItem(null);
         series_empty.tooltip(null);
+
         var series_empty_labels = series_empty.labels();
         series_empty_labels.enabled(true);
         series_empty_labels.position('top');
