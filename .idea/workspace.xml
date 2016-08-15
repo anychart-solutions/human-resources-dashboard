@@ -6,9 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="750a1535-2507-40ed-a610-3572b89379ea" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HR.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
     </list>
     <ignored path="human-resources-dashboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="419" column="30" selection-start-line="419" selection-start-column="30" selection-end-line="419" selection-end-column="30" />
+            <state relative-caret-position="99">
+              <caret line="410" column="33" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
               <folding>
                 <marker date="1471250917628" expanded="true" signature="5140:5164" placeholder="..." />
                 <marker date="1471250917628" expanded="true" signature="5140:5172" placeholder="..." />
@@ -264,12 +262,12 @@
       <workItem from="1470887389251" duration="35083000" />
       <workItem from="1471227450599" duration="3021000" />
       <workItem from="1471230576781" duration="1574000" />
-      <workItem from="1471250861867" duration="74000" />
+      <workItem from="1471250861867" duration="124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39752000" />
+    <option name="totallyTimeSpent" value="39802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -477,8 +475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="419" column="30" selection-start-line="419" selection-start-column="30" selection-end-line="419" selection-end-column="30" />
+        <state relative-caret-position="99">
+          <caret line="410" column="33" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
           <folding>
             <marker date="1471250917628" expanded="true" signature="5140:5164" placeholder="..." />
             <marker date="1471250917628" expanded="true" signature="5140:5172" placeholder="..." />
