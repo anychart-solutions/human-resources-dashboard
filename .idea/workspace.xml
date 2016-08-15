@@ -5,10 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/common.js" line="440" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="750a1535-2507-40ed-a610-3572b89379ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="750a1535-2507-40ed-a610-3572b89379ea" name="Default" comment="" />
     <ignored path="human-resources-dashboard.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
@@ -55,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gitignore.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gitignore.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gitignore.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
@@ -117,8 +114,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="429" />
+    <option name="x" value="58" />
+    <option name="y" value="84" />
     <option name="width" value="1924" />
     <option name="height" value="1056" />
   </component>
@@ -246,15 +243,15 @@
       <option name="presentableId" value="Default" />
       <updated>1470887388146</updated>
       <workItem from="1470887389251" duration="35083000" />
-      <workItem from="1471227450599" duration="2786000" />
+      <workItem from="1471227450599" duration="2864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37869000" />
+    <option name="totallyTimeSpent" value="37947000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="429" width="1924" height="1056" extended-state="1" />
+    <frame x="58" y="84" width="1924" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21698113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -354,6 +351,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -366,14 +371,6 @@
             <marker date="1471229865263" expanded="true" signature="8681:8713" placeholder="..." />
             <marker date="1471229865263" expanded="true" signature="9037:9055" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
