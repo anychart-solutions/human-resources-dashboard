@@ -6,9 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="750a1535-2507-40ed-a610-3572b89379ea" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitignore.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/human-resources-dashboard.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="human-resources-dashboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,8 +120,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
-    <option name="y" value="84" />
+    <option name="x" value="-244" />
+    <option name="y" value="99" />
     <option name="width" value="1924" />
     <option name="height" value="1056" />
   </component>
@@ -248,15 +249,15 @@
       <option name="presentableId" value="Default" />
       <updated>1470887388146</updated>
       <workItem from="1470887389251" duration="35083000" />
-      <workItem from="1471227450599" duration="2970000" />
+      <workItem from="1471227450599" duration="3053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38053000" />
+    <option name="totallyTimeSpent" value="38136000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="84" width="1924" height="1056" extended-state="1" />
+    <frame x="-244" y="99" width="1924" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21698113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
