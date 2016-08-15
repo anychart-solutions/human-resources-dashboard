@@ -419,13 +419,16 @@
         // sum of padding and margin height
         var offsetHeight = 85;
 
-        if (mq.matches) {
-            var height = $(window).height() - offsetHeight;
-            $chart.css('height', height / 2);
-            $scoreCard.css('height', 650);
-        } else {
-            $chart.css('height', 350);
-            $scoreCard.css('height', 550);
+        // if parent != iframe
+        if (self === top) {
+            if (mq.matches) {
+                var height = $(window).height() - offsetHeight;
+                $chart.css('height', height / 2);
+                $scoreCard.css('height', 650);
+            } else {
+                $chart.css('height', 350);
+                $scoreCard.css('height', 550);
+            }
         }
     }
 
