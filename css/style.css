@@ -1,8 +1,8 @@
-body {
+body.no-iframe {
     background-color: #f6f6f6;
 }
 
-body.iframe {
+body {
     background-color: #fff;
 }
 
@@ -18,11 +18,11 @@ body.iframe {
     border-radius: 2px;
 }
 
-.chart {
+.chart.no-iframe {
     height: 500px;
 }
 
-.iframe .chart {
+.chart {
     height: 400px;
 }
 
