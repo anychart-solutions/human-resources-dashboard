@@ -7,6 +7,10 @@ body {
 }
 
 .wrapper {
+    padding: 0 15px;
+}
+
+.no-iframe .wrapper {
     padding: 15px;
 }
 
