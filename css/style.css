@@ -12,7 +12,6 @@ body.iframe {
 
 .chart_container {
     margin-bottom: 15px;
-    padding: 10px;
     background: #fff;
     -webkit-box-shadow: 0 0 5px 0 #ddd;
     box-shadow: 0 0 5px 0 #ddd;
@@ -21,6 +20,10 @@ body.iframe {
 
 .chart {
     height: 500px;
+}
+
+.iframe .chart {
+    height: 400px;
 }
 
 #score-card {

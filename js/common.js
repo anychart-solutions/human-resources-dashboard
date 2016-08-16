@@ -139,6 +139,7 @@
         chart.overlapMode(true);
         // set the insideLabelsOffset
         chart.insideLabelsOffset("-55%");
+        chart.padding().top('15px');
 
         // set chart labels settings
         var labels = chart.labels();
@@ -180,6 +181,7 @@
         chart = anychart.bar();
         // set chart title text settings
         chart.title('Number of Employees by Monthly Salary').padding().bottom('20px');
+        chart.padding().top('15px');
 
         // create area series with passed data
         var series = chart.bar([
@@ -237,6 +239,7 @@
         chart.title('Engineering Department Staff Composition');
         // create empty area in pie chart
         chart.innerRadius('65%');
+        chart.padding().top('15px');
 
         // set chart labels settings
         var labels = chart.labels();
@@ -286,6 +289,7 @@
         chart.yScale().minimum(0);
         chart.yScale().ticks().interval(10);
         chart.yAxis().minorTicks().enabled(true);
+        chart.padding().top('15px');
 
         // create area series with passed data
         var series = chart.column([
@@ -357,6 +361,28 @@
         // turn on legend
         chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
         chart.tooltip().displayMode('union');
+        chart.padding().top('15px');
+        // hidden labels statistic if all series enabled false
+        chart.listen('legenditemmouseup', function () {
+            var series_count = chart.getSeriesCount();
+            var labels = chart.getSeries(series_count - 1).labels();
+            var flag = true;
+
+            for (var i = 0; i < series_count - 1; i++) {
+                if (chart.getSeries(i).enabled() === true) {
+                    flag = true;
+                    break;
+                } else {
+                    flag = false;
+                }
+            }
+
+            if (!flag) {
+                labels.enabled(false);
+            } else {
+                labels.enabled(true);
+            }
+        });
 
         // create first series with mapped data
         var series_communication_skills = chart.column(series_communication_skills_data);
@@ -417,7 +443,7 @@
         var $chart = $('.chart');
         var $scoreCard = $('#score-card');
         // sum of padding and margin height
-        var offsetHeight = 85;
+        var offsetHeight = 45;
 
         // if parent != iframe
         if (self === top) {
