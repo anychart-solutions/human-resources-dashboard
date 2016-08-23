@@ -183,6 +183,7 @@ function processData(rawData) {
 
 function human_resources_dashboard(rawData) {
     var data = processData(rawData);
+    var chart;
 
     create_gender_dept_chart(data, data.dept_categories[0], 'Gender - Manufacture Dept.', 'manufacture-dept');
     create_gender_dept_chart(data, data.dept_categories[1], 'Gender - Sales Dept.', 'sales-dept');
@@ -244,6 +245,7 @@ function human_resources_dashboard(rawData) {
     }
 
     function create_salary_chart(data, title, container) {
+        var chart;
         // create bar chart
         chart = anychart.bar();
         // set chart title text settings
@@ -302,6 +304,7 @@ function human_resources_dashboard(rawData) {
     }
 
     function create_rank_composition_chart(data, title, container) {
+        var chart;
         // set data and chart type
         var data_chart = [];
 
@@ -374,6 +377,7 @@ function human_resources_dashboard(rawData) {
     }
 
     function create_employment_date_chart(data, title, container) {
+        var chart;
         // create column chart
         chart = anychart.column();
         // set chart title text settings
@@ -435,6 +439,7 @@ function human_resources_dashboard(rawData) {
     }
 
     function create_score_card_chart(data_score_card, title, container) {
+        var chart;
         // add empty data
         data_score_card.values.filter(function (arr) {
             arr.push(0);
