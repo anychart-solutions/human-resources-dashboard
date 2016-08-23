@@ -5,7 +5,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '4500',
-            'staff': 'Engineer Assistant',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -21,7 +21,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4570',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Teamwork': '2',
@@ -37,7 +37,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '5570',
-            'staff': 'Engineer',
+            'rank': '8',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -53,7 +53,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '6570',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -69,7 +69,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '5',
@@ -85,7 +85,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4000',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -101,7 +101,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '5000',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '3',
@@ -117,7 +117,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '5800',
-            'staff': 'Engineer',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -133,7 +133,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '5900',
-            'staff': 'Engineer',
+            'rank': '9',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '2',
@@ -149,7 +149,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '7900',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '5',
@@ -165,7 +165,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '6900',
-            'staff': 'Engineer',
+            'rank': '10',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '5',
@@ -181,7 +181,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '5300',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '3',
@@ -197,7 +197,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Engineer',
+            'rank': '9',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '2',
@@ -213,7 +213,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '7600',
-            'staff': 'Engineer',
+            'rank': '9',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '4',
@@ -229,7 +229,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '7000',
-            'staff': 'Engineer',
+            'rank': '10',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '3',
@@ -245,7 +245,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '5900',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '4',
@@ -261,7 +261,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4100',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '1',
@@ -277,7 +277,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '7800',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -293,7 +293,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '7700',
-            'staff': 'Engineer Professor',
+            'rank': '10',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -309,7 +309,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '5700',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -325,7 +325,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '5600',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '5',
@@ -341,7 +341,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '9100',
-            'staff': 'Engineer Professor',
+            'rank': '11',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '5',
@@ -357,7 +357,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'female',
             'salary': '9000',
-            'staff': 'Engineer Professor',
+            'rank': '11',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '1',
@@ -373,7 +373,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '6900',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '4',
@@ -389,7 +389,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '4',
@@ -405,7 +405,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '4150',
-            'staff': 'Engineer Assistant',
+            'rank': '3',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -421,7 +421,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '5900',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '2',
@@ -437,7 +437,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '6900',
-            'staff': 'Senior Engineer',
+            'rank': '7',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '2',
@@ -453,7 +453,7 @@ function employees_data() {
             'department': 'manufacture',
             'gender': 'male',
             'salary': '7900',
-            'staff': 'Engineer Professor',
+            'rank': '10',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '3',
@@ -470,7 +470,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '8900',
-            'staff': 'Engineer Professor',
+            'rank': '12',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '5',
@@ -486,7 +486,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Senior Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Technical Knowledge': '4',
@@ -501,7 +501,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '4900',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '4',
@@ -517,7 +517,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '4500',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '2',
@@ -533,7 +533,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '5000',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '1',
@@ -549,7 +549,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '7000',
-            'staff': 'Senior Engineer',
+            'rank': '7',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '3',
@@ -565,7 +565,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '7500',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -581,7 +581,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '8000',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '5',
@@ -597,7 +597,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '6000',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -613,7 +613,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '5',
@@ -629,7 +629,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4500',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '4',
@@ -645,7 +645,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4800',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '3',
@@ -661,7 +661,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4900',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '4',
@@ -677,7 +677,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4500',
-            'staff': 'Engineer Assistant',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -693,7 +693,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '4500',
-            'staff': 'Engineer Assistant',
+            'rank': '3',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '2',
@@ -709,7 +709,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '5500',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '1',
@@ -725,7 +725,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '6500',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '5',
@@ -741,7 +741,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '5700',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '5',
@@ -757,7 +757,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'female',
             'salary': '5700',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -773,7 +773,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '5700',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '3',
@@ -789,7 +789,7 @@ function employees_data() {
             'department': 'sales',
             'gender': 'male',
             'salary': '5700',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '3',
@@ -805,7 +805,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '5800',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '3',
@@ -821,7 +821,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '6800',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '2',
@@ -837,7 +837,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '8800',
-            'staff': 'Engineer Professor',
+            'rank': '12',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '5',
@@ -853,7 +853,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '8800',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '4',
@@ -869,7 +869,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '9000',
-            'staff': 'Engineer Professor',
+            'rank': '11',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '2',
@@ -885,7 +885,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5800',
-            'staff': 'Senior Engineer',
+            'rank': '7',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '3',
@@ -901,7 +901,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '3',
@@ -917,7 +917,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -933,7 +933,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '5500',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -949,7 +949,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '4100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '1',
@@ -965,7 +965,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '4500',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '1',
@@ -981,7 +981,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '6100',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '3',
@@ -997,7 +997,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -1013,7 +1013,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -1029,7 +1029,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '4',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '3',
@@ -1045,7 +1045,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '6100',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '4',
@@ -1061,7 +1061,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7100',
-            'staff': 'Senior Engineer',
+            'rank': '5',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '2',
@@ -1077,7 +1077,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7500',
-            'staff': 'Engineer',
+            'rank': '8',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '5',
@@ -1093,7 +1093,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7300',
-            'staff': 'Engineer Professor',
+            'rank': '8',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '5',
@@ -1109,7 +1109,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7100',
-            'staff': 'Engineer Professor',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '5',
@@ -1125,7 +1125,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7100',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -1141,7 +1141,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '8100',
-            'staff': 'Engineer Professor',
+            'rank': '9',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '5',
@@ -1157,7 +1157,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '8100',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '2',
@@ -1173,7 +1173,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7500',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '4',
@@ -1189,7 +1189,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '4100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -1205,7 +1205,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '8100',
-            'staff': 'Engineer Professor',
+            'rank': '8',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '3',
@@ -1221,7 +1221,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7700',
-            'staff': 'Senior Engineer',
+            'rank': '8',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -1237,7 +1237,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '5',
@@ -1253,7 +1253,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -1269,7 +1269,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '6100',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '3',
@@ -1285,7 +1285,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '6100',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -1301,7 +1301,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -1317,7 +1317,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '6',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '3',
@@ -1333,7 +1333,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7100',
-            'staff': 'Engineer Professor',
+            'rank': '8',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '4',
@@ -1349,7 +1349,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '8100',
-            'staff': 'Engineer Professor',
+            'rank': '8',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '5',
@@ -1365,7 +1365,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '9000',
-            'staff': 'Engineer Professor',
+            'rank': '10',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '1',
@@ -1381,7 +1381,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'female',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -1397,7 +1397,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '6100',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '2',
@@ -1413,7 +1413,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -1429,7 +1429,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '7100',
-            'staff': 'Senior Engineer',
+            'rank': '9',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '4',
@@ -1445,7 +1445,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -1461,7 +1461,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '5100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '5',
@@ -1477,7 +1477,7 @@ function employees_data() {
             'department': 'engineering',
             'gender': 'male',
             'salary': '6200',
-            'staff': 'Engineer',
+            'rank': '7',
             'employment-date': '2014',
             'score-card': {
                 'Communication Skills': '4',
@@ -1493,7 +1493,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '5100',
-            'staff': 'Senior Engineer',
+            'rank': '4',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',
@@ -1509,7 +1509,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'male',
             'salary': '9000',
-            'staff': 'Engineer Professor',
+            'rank': '11',
             'employment-date': '2015',
             'score-card': {
                 'Communication Skills': '4',
@@ -1525,7 +1525,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '5500',
-            'staff': 'Senior Engineer',
+            'rank': '4',
             'employment-date': '2013',
             'score-card': {
                 'Communication Skills': '2',
@@ -1541,7 +1541,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '6100',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '3',
@@ -1557,7 +1557,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '4100',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '2',
@@ -1573,7 +1573,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '6100',
-            'staff': 'Engineer',
+            'rank': '6',
             'employment-date': '2012',
             'score-card': {
                 'Communication Skills': '1',
@@ -1589,7 +1589,7 @@ function employees_data() {
             'department': 'finance',
             'gender': 'female',
             'salary': '4500',
-            'staff': 'Engineer',
+            'rank': '5',
             'employment-date': '2016',
             'score-card': {
                 'Communication Skills': '3',

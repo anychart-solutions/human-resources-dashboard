@@ -10,8 +10,8 @@ function processData(rawData) {
     var department_gender_male = [];
     var department_gender_female = [];
 
-    var staff_categories = [];
-    var staff_values = [];
+    var rank_categories = [];
+    var rank_values = [];
 
     var salary_categories = [];
     var salary_categories_names = [];
@@ -67,9 +67,9 @@ function processData(rawData) {
             department_gender_male.push(0);
             department_gender_female.push(0);
         }
-        if (staff_categories.indexOf(data[i]['staff']) == -1) {
-            staff_categories.push(data[i]['staff']);
-            staff_values.push(0);
+        if (rank_categories.indexOf(data[i]['rank']) == -1) {
+            rank_categories.push(data[i]['rank']);
+            rank_values.push(0);
         }
         if (employment_date_categories.indexOf(data[i]['employment-date']) == -1) {
             employment_date_categories.push(data[i]['employment-date']);
@@ -116,10 +116,10 @@ function processData(rawData) {
         }
     }
 
-    for (i = 0; i < staff_categories.length; i++) {
+    for (i = 0; i < rank_categories.length; i++) {
         for (j = 0; j < data.length; j++) {
-            if (staff_categories[i] == data[j]['staff']) {
-                staff_values[i] += 1;
+            if (rank_categories[i] == data[j]['rank']) {
+                rank_values[i] += 1;
             }
         }
     }
@@ -156,8 +156,8 @@ function processData(rawData) {
         result[department_categories[i] + '_female'] = department_gender_female[i];
     }
 
-    for (i = 0; i < staff_categories.length; i++) {
-        result[staff_categories[i]] = staff_values[i];
+    for (i = 0; i < rank_categories.length; i++) {
+        result[rank_categories[i]] = rank_values[i];
     }
 
     for (i = 0; i < employment_date_categories.length; i++) {
@@ -165,7 +165,7 @@ function processData(rawData) {
     }
 
     result['dept_categories'] = department_categories;
-    result['staff_categories'] = staff_categories;
+    result['rank_categories'] = rank_categories;
     result['salary'] = {
         'categories': salary_categories,
         'names': salary_categories_names,
@@ -189,9 +189,9 @@ function human_resources_dashboard(rawData) {
     create_gender_dept_chart(data, data.dept_categories[2], 'Gender - Engineering Dept.', 'engineering-dept');
     create_gender_dept_chart(data, data.dept_categories[3], 'Gender - Finance Dept.', 'finance-dept');
     create_salary_chart(data, 'Number of Employees by Monthly Salary', 'salary');
-    create_staff_composition_chart(data, 'Engineering Department Staff Composition', 'staff-composition');
+    create_rank_composition_chart(data, 'Employees Rank Composition \n Rank: 1-15', 'rank-composition');
     create_employment_date_chart(data, 'Number of Employees by Year', 'employment-date');
-    create_score_card_chart(data.data_score_info, 'Capability Score Card per Employee', 'score-card');
+    create_score_card_chart(data.data_score_info, 'Capability Score Card per Employee \n Score: 0-5', 'score-card');
 
     function create_gender_dept_chart(data, dept, title, container) {
         // set data and chart type
@@ -301,23 +301,38 @@ function human_resources_dashboard(rawData) {
         chart.draw();
     }
 
-    function create_staff_composition_chart(data, title, container) {
+    function create_rank_composition_chart(data, title, container) {
         // set data and chart type
         var data_chart = [];
 
-        for (var i = 0; i < data.staff_categories.length; i++) {
+        for (var i = 0; i < data.rank_categories.length; i++) {
             data_chart.push(
                 {
-                    'name': data.staff_categories[i],
-                    'value': data[data.staff_categories[i]]
+                    'name': data.rank_categories[i],
+                    'value': data[data.rank_categories[i]]
                 }
             );
         }
+
+        data_chart.sort(function (a, b) {
+            return a.name - b.name
+        });
+
         chart = anychart.pie(data_chart);
         chart.title(title);
         // create empty area in pie chart
         chart.innerRadius('65%');
         chart.padding().top('15px');
+
+        var tooltip = chart.tooltip();
+        tooltip.titleFormatter(function () {
+            return this.name + ' rank';
+        });
+        tooltip.textFormatter(function () {
+            var employees = employees_data();
+            return 'Employees: ' + this.value + '\n' + 'Percent value: ' +
+                (this.value / employees.length * 100).toFixed(2) + '%';
+        });
 
         // set chart labels settings
         var labels = chart.labels();
@@ -426,7 +441,6 @@ function human_resources_dashboard(rawData) {
         });
 
         var dataSet = anychart.data.set(data_score_card.values);
-
         // create bar chart
         chart = anychart.column();
 
