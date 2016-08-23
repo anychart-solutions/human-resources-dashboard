@@ -352,7 +352,7 @@ function human_resources_dashboard(rawData) {
         label_1.position("center");
         label_1.anchor("center");
         label_1.offsetX("-5px");
-        label_1.offsetY("-10px");
+        label_1.offsetY("0px");
         label_1.useHtml(true);
 
         // set chart label settings
@@ -361,7 +361,7 @@ function human_resources_dashboard(rawData) {
         label_2.position("center");
         label_2.anchor("center");
         label_2.offsetX("-5px");
-        label_2.offsetY("15px");
+        label_2.offsetY("25px");
         label_2.useHtml(true);
 
         chart.overlapMode(true);
