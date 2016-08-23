@@ -1,136 +1,203 @@
-(function () {
-    var data = employees_data();
+function processData(rawData) {
+    var data = rawData;
 
-    var manufacture_dept = [];
-    var sales_dept = [];
-    var engineering_dept = [];
-    var finance_dept = [];
+    var i = 0;
+    var j = 0;
 
-    var salary_group_1 = [];
-    var salary_group_2 = [];
-    var salary_group_3 = [];
-    var salary_group_4 = [];
-    var salary_group_5 = [];
+    var department_categories = [];
+    var department_values = [];
 
-    var staff_composition_engineer = [];
-    var staff_composition_Engineer_professor = [];
-    var staff_composition_senior_assistant = [];
-    var staff_composition_senior_engineer = [];
+    var department_gender_male = [];
+    var department_gender_female = [];
 
-    var employment_date_group_1 = [];
-    var employment_date_group_2 = [];
-    var employment_date_group_3 = [];
-    var employment_date_group_4 = [];
-    var employment_date_group_5 = [];
+    var staff_categories = [];
+    var staff_values = [];
 
-    var data_score_card = [];
+    var salary_categories = [];
+    var salary_categories_names = [];
+    var salary_values = [];
 
-    data.filter(function (employee) {
+    var employment_date_categories = [];
+    var employment_date_values = [];
 
-        switch (employee.department) {
-            case 'manufacture' :
-                manufacture_dept.push(employee);
-                break;
-            case 'sales' :
-                sales_dept.push(employee);
-                break;
-            case 'engineering' :
-                engineering_dept.push(employee);
-                break;
-            case 'finance' :
-                finance_dept.push(employee);
-                break;
+    var data_score_categories = [];
+    var data_score_values = [];
+
+    var pattern_salary_group = [
+        {
+            name: '< $5000',
+            from: 0,
+            to: 4999
+        },
+        {
+            name: '$5000 - $6000',
+            from: 5000,
+            to: 5999
+        },
+        {
+            name: '$6000 - $7000',
+            from: 6000,
+            to: 6999
+        },
+        {
+            name: '$7000 - $8000',
+            from: 7000,
+            to: 7999
+        },
+        {
+            name: '> $8000',
+            from: 8000
         }
 
-        switch (true) {
-            case employee.salary < 5000 :
-                salary_group_1.push(employee);
-                break;
-            case employee.salary < 6000 :
-                salary_group_2.push(employee);
-                break;
-            case employee.salary < 7000 :
-                salary_group_3.push(employee);
-                break;
-            case employee.salary < 8000 :
-                salary_group_4.push(employee);
-                break;
-            case employee.salary >= 8000 :
-                salary_group_5.push(employee);
-                break;
-        }
+    ];
 
-        switch (employee.staff) {
-            case 'Engineer' :
-                staff_composition_engineer.push(employee);
-                break;
-            case 'Engineer Professor' :
-                staff_composition_Engineer_professor.push(employee);
-                break;
-            case 'Engineer Assistant' :
-                staff_composition_senior_assistant.push(employee);
-                break;
-            case 'Senior Engineer' :
-                staff_composition_senior_engineer.push(employee);
-                break;
-        }
+    var list;
 
-        switch (employee['employment-date']) {
-            case '2012' :
-                employment_date_group_1.push(employee);
-                break;
-            case '2013' :
-                employment_date_group_2.push(employee);
-                break;
-            case '2014' :
-                employment_date_group_3.push(employee);
-                break;
-            case '2015' :
-                employment_date_group_4.push(employee);
-                break;
-            case '2016' :
-                employment_date_group_5.push(employee);
-                break;
-        }
-
-        data_score_card.push(
-            [
-                employee['name'],
-                +employee['communication-skills'],
-                +employee['technical-knowledge'],
-                +employee['teamwork'],
-                +employee['meeting-deadline'],
-                +employee['problem-solving'],
-                +employee['punctuality'],
-                // for empty series
-                0
-            ]
-        )
-
-    });
-
-    var manufacture_dept_male = returnMaleOrFemaleDept(manufacture_dept, 'male');
-    var manufacture_dept_female = returnMaleOrFemaleDept(manufacture_dept, 'female');
-    var sales_dept_male = returnMaleOrFemaleDept(sales_dept, 'male');
-    var sales_dept_female = returnMaleOrFemaleDept(sales_dept, 'female');
-    var engineering_dept_male = returnMaleOrFemaleDept(engineering_dept, 'male');
-    var engineering_dept_female = returnMaleOrFemaleDept(engineering_dept, 'female');
-    var finance_dept_male = returnMaleOrFemaleDept(finance_dept, 'male');
-    var finance_dept_female = returnMaleOrFemaleDept(finance_dept, 'female');
-
-    function returnMaleOrFemaleDept(dept, gender) {
-        return dept.filter(function (employee) {
-            if (employee.gender == gender) {
-                return employee
-            }
-        })
+    for (i = 0; i < pattern_salary_group.length; i++) {
+        pattern_salary_group[i].to = pattern_salary_group[i].to !== undefined ? pattern_salary_group[i].to : 'x';
+        salary_categories.push([pattern_salary_group[i].from, pattern_salary_group[i].to]);
+        salary_categories_names.push(pattern_salary_group[i].name);
+        salary_values.push(0);
     }
 
-    function create_gender_dept_chart(dept_male, dept_female, title, container) {
+    for (i = 0; i < data.length; i++) {
+        if (department_categories.indexOf(data[i]['department']) == -1) {
+            department_categories.push(data[i]['department']);
+            department_values.push(0);
+            department_gender_male.push(0);
+            department_gender_female.push(0);
+        }
+        if (staff_categories.indexOf(data[i]['staff']) == -1) {
+            staff_categories.push(data[i]['staff']);
+            staff_values.push(0);
+        }
+        if (employment_date_categories.indexOf(data[i]['employment-date']) == -1) {
+            employment_date_categories.push(data[i]['employment-date']);
+            employment_date_values.push(0);
+        }
+        if (data[i]['score-card'] !== undefined) {
+            list = Object.getOwnPropertyNames(data[i]['score-card']);
+            for (j = 0; j < list.length; j++) {
+                if (data_score_categories.indexOf(list[j]) == -1) {
+                    data_score_categories.push(list[j]);
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < department_categories.length; i++) {
+        for (j = 0; j < data.length; j++) {
+            if (department_categories[i] == data[j]['department']) {
+                department_values[i] += 1;
+                switch (data[j]['gender']) {
+                    case 'male' :
+                        department_gender_male[i] += 1;
+                        break;
+                    case 'female' :
+                        department_gender_female[i] += 1;
+                        break;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < salary_categories.length; i++) {
+        for (j = 0; j < data.length; j++) {
+            if (data[j]['salary'] !== 'group') {
+                if (salary_categories[i][0] <= data[j]['salary'] && salary_categories[i][1] > data[j]['salary']) {
+                    salary_values[i] += 1;
+                    data[j]['salary'] = 'group';
+                } else {
+                    if (salary_categories[i][1] === 'x' && i == salary_categories.length - 1) {
+                        salary_values[salary_categories.length - 1] += 1;
+                    }
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < staff_categories.length; i++) {
+        for (j = 0; j < data.length; j++) {
+            if (staff_categories[i] == data[j]['staff']) {
+                staff_values[i] += 1;
+            }
+        }
+    }
+
+    for (i = 0; i < data.length; i++) {
+        if (data[i]['score-card'] !== undefined) {
+            data_score_values.push([data[i]['name']]);
+            for (j = 0; j < data_score_categories.length; j++) {
+                if (j == 0) list = Object.getOwnPropertyNames(data[i]['score-card']);
+                if (data_score_categories.sort()[j] == list.sort()[j]) {
+                    data_score_values[i].push(+data[i]['score-card'][list[j]]);
+                } else {
+                    data_score_values[i].push(0);
+                    list.unshift(0);
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < employment_date_categories.length; i++) {
+        for (j = 0; j < data.length; j++) {
+            if (employment_date_categories[i] == data[j]['employment-date']) {
+                employment_date_values[i] += 1;
+            }
+        }
+    }
+
+    var result = {};
+    result.employment_date = {};
+
+    for (i = 0; i < department_categories.length; i++) {
+        result[department_categories[i] + '_count'] = department_values[i];
+        result[department_categories[i] + '_male'] = department_gender_male[i];
+        result[department_categories[i] + '_female'] = department_gender_female[i];
+    }
+
+    for (i = 0; i < staff_categories.length; i++) {
+        result[staff_categories[i]] = staff_values[i];
+    }
+
+    for (i = 0; i < employment_date_categories.length; i++) {
+        result.employment_date[employment_date_categories[i]] = employment_date_values[i];
+    }
+
+    result['dept_categories'] = department_categories;
+    result['staff_categories'] = staff_categories;
+    result['salary'] = {
+        'categories': salary_categories,
+        'names': salary_categories_names,
+        'values': salary_values
+    };
+    result['employment_date_categories'] = employment_date_categories;
+    result['employees_count'] = data.length;
+    result['data_score_info'] = {
+        'categories': data_score_categories,
+        'values': data_score_values
+    };
+
+    return result;
+}
+
+function human_resources_dashboard(rawData) {
+    var data = processData(rawData);
+
+    create_gender_dept_chart(data, data.dept_categories[0], 'Gender - Manufacture Dept.', 'manufacture-dept');
+    create_gender_dept_chart(data, data.dept_categories[1], 'Gender - Sales Dept.', 'sales-dept');
+    create_gender_dept_chart(data, data.dept_categories[2], 'Gender - Engineering Dept.', 'engineering-dept');
+    create_gender_dept_chart(data, data.dept_categories[3], 'Gender - Finance Dept.', 'finance-dept');
+    create_salary_chart(data, 'Number of Employees by Monthly Salary', 'salary');
+    create_staff_composition_chart(data, 'Engineering Department Staff Composition', 'staff-composition');
+    create_employment_date_chart(data, 'Number of Employees by Year', 'employment-date');
+    create_score_card_chart(data.data_score_info, 'Capability Score Card per Employee', 'score-card');
+
+    function create_gender_dept_chart(data, dept, title, container) {
         // set data and chart type
         chart = anychart.pie([
-            {name: "Male", value: dept_male.length},
-            {name: "Female", value: dept_female.length}
+            {name: "Male", value: data[dept + '_male']},
+            {name: "Female", value: data[dept + '_female']}
         ]);
         // set chart title
         chart.title(title);
@@ -154,7 +221,7 @@
         // set chart label settings
         var label_1 = chart.label(0);
         label_1.text('<span style="font-size: 32px; color: #A0B1BA;">' +
-            (dept_male.length + dept_female.length) + '</span>');
+            (data[dept + '_male'] + data[dept + '_female']) + '</span>');
         label_1.position("center");
         label_1.anchor("center");
         label_1.offsetX("-5px");
@@ -176,21 +243,27 @@
         chart.draw();
     }
 
-    function create_salary_chart() {
+    function create_salary_chart(data, title, container) {
         // create bar chart
         chart = anychart.bar();
         // set chart title text settings
-        chart.title('Number of Employees by Monthly Salary').padding().bottom('20px');
+        chart.title(title).padding().bottom('20px');
         chart.padding().top('15px');
 
+        var data_chart = [];
+
+        for (var i = 0; i < data.salary.categories.length; i++) {
+            data_chart.push(
+                {
+                    'x': data.salary.names[i],
+                    'value': data.salary.values[i]
+                }
+            );
+        }
+
+        data_chart.reverse();
         // create area series with passed data
-        var series = chart.bar([
-            ['> $8000', salary_group_5.length],
-            ['$7000 - $8000', salary_group_4.length],
-            ['$6000 - $7000', salary_group_3.length],
-            ['$5000 - $6000', salary_group_2.length],
-            ['< $5000', salary_group_1.length]
-        ]);
+        var series = chart.bar(data_chart);
 
         // set chart labels settings
         var labels = series.labels();
@@ -223,20 +296,25 @@
         chart.yScale().ticks().interval(10);
         chart.yAxis().minorTicks().enabled(true);
         // set container id for the chart
-        chart.container('salary');
+        chart.container(container);
         // initiate chart drawing
         chart.draw();
     }
 
-    function create_staff_composition_chart() {
+    function create_staff_composition_chart(data, title, container) {
         // set data and chart type
-        chart = anychart.pie([
-            {name: "Engineer", value: staff_composition_engineer.length},
-            {name: "Engineer Professor", value: staff_composition_Engineer_professor.length},
-            {name: "Engineer Assistant", value: staff_composition_senior_assistant.length},
-            {name: "Senior Engineer", value: staff_composition_senior_engineer.length}
-        ]);
-        chart.title('Engineering Department Staff Composition');
+        var data_chart = [];
+
+        for (var i = 0; i < data.staff_categories.length; i++) {
+            data_chart.push(
+                {
+                    'name': data.staff_categories[i],
+                    'value': data[data.staff_categories[i]]
+                }
+            );
+        }
+        chart = anychart.pie(data_chart);
+        chart.title(title);
         // create empty area in pie chart
         chart.innerRadius('65%');
         chart.padding().top('15px');
@@ -255,7 +333,7 @@
         // set chart label settings
         var label_1 = chart.label(0);
         label_1.text('<span style="font-size: 32px; color: #A0B1BA;">' +
-            (data.length) + '</span>');
+            data.employees_count + '</span>');
         label_1.position("center");
         label_1.anchor("center");
         label_1.offsetX("-5px");
@@ -275,30 +353,39 @@
         // set the insideLabelsOffset
         chart.insideLabelsOffset("-55%");
         // set container id for the chart
-        chart.container('staff-composition');
+        chart.container(container);
         // init chart
         chart.draw();
     }
 
-    function create_employment_date_chart() {
+    function create_employment_date_chart(data, title, container) {
         // create column chart
         chart = anychart.column();
         // set chart title text settings
-        chart.title('Number of Employees by Year').padding().bottom('20px');
+        chart.title(title).padding().bottom('20px');
         // set scale minimum
         chart.yScale().minimum(0);
         chart.yScale().ticks().interval(10);
         chart.yAxis().minorTicks().enabled(true);
         chart.padding().top('15px');
 
+        var data_chart = [];
+
+        for (var i = 0; i < data.employment_date_categories.length; i++) {
+            data_chart.push(
+                {
+                    'x': data.employment_date_categories[i],
+                    'value': data.employment_date[data.employment_date_categories[i]]
+                }
+            );
+        }
+
+        data_chart.sort(function (a, b) {
+            return a.x - b.x
+        });
+
         // create area series with passed data
-        var series = chart.column([
-            ['2012', employment_date_group_1.length],
-            ['2013', employment_date_group_2.length],
-            ['2014', employment_date_group_3.length],
-            ['2015', employment_date_group_4.length],
-            ['2016', employment_date_group_5.length]
-        ]);
+        var series = chart.column(data_chart);
 
         // set chart labels settings
         var labels = series.labels();
@@ -309,7 +396,7 @@
         labels.fontColor('white');
         labels.fontWeight('bold');
 
-        chart.interactivity().hoverMode('byX');
+        chart.interactivity().hoverMode('single');
         chart.tooltip().positionMode('point');
 
         // set tooltip formatter
@@ -327,40 +414,72 @@
         });
 
         // set container id for the chart
-        chart.container('employment-date');
+        chart.container(container);
         // initiate chart drawing
         chart.draw();
     }
 
-    function create_score_card_chart() {
-        // create data set on our data
-        var dataSet = anychart.data.set(data_score_card);
-        // map data for the first series, take x from the zero column and value from the first column of data set
-        var series_communication_skills_data = dataSet.mapAs({x: [0], value: [1]});
-        // map data for the second series, take x from the zero column and value from the second column of data set
-        var series_technical_knowledge_data = dataSet.mapAs({x: [0], value: [2]});
-        // map data for the third series, take x from the zero column and value from the third column of data set
-        var series_teamwork_data = dataSet.mapAs({x: [0], value: [3]});
-        // map data for the fourth series, take x from the zero column and value from the fourth column of data set
-        var series_meeting_deadline_data = dataSet.mapAs({x: [0], value: [4]});
-        // map data for the fifth series, take x from the zero column and value from the fifth column of data set
-        var series_problem_solving_data = dataSet.mapAs({x: [0], value: [5]});
-        // map data for the sixth series, take x from the zero column and value from the sixth column of data set
-        var series_punctuality_data = dataSet.mapAs({x: [0], value: [6]});
-        // map data for the seventh series, take x from the zero column and value from the seventh column of data set
-        var series_empty_data = dataSet.mapAs({x: [0], value: [7]});
+    function create_score_card_chart(data_score_card, title, container) {
+        // add empty data
+        data_score_card.values.filter(function (arr) {
+            arr.push(0);
+        });
+
+        var dataSet = anychart.data.set(data_score_card.values);
 
         // create bar chart
         chart = anychart.column();
+
+        for (var i = 0; i < data_score_card.categories.length; i++) {
+            chart.column(dataSet.mapAs({x: [0], value: [i + 1]})).name(data_score_card.categories[i]);
+
+            if (i == data_score_card.categories.length - 1) {
+                //  create series empty, for eval sum statistic
+                var series_empty = chart.column(dataSet.mapAs(
+                    {
+                        x: [0],
+                        value: [data_score_card.categories.length + 1]
+                    }
+                ));
+                series_empty.name('Empty');
+                series_empty.fill(null);
+                series_empty.stroke(null);
+                series_empty.legendItem(null);
+                series_empty.tooltip(null);
+
+                var series_empty_labels = series_empty.labels();
+                series_empty_labels.enabled(true);
+                series_empty_labels.position('top');
+                series_empty_labels.anchor('bottom');
+                series_empty_labels.textFormatter(function () {
+                    return this.series.getPoint(this.index).getStat('categoryYSum');
+                });
+            }
+        }
+
         // force chart to stack values by Y scale.
         chart.yScale().stackMode('value');
         // set chart title text settings
-        chart.title('Capability Score Card per Employee').padding().bottom('20px');
+        chart.title(title).padding().bottom('20px');
         chart.xAxis().labels().rotation(-90);
         chart.interactivity().hoverMode('byX');
         // turn on legend
         chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
-        chart.tooltip().displayMode('union');
+        chart.tooltip().displayMode('union').textFormatter(function () {
+            var result = [];
+
+            for (var i = 0; i < this.points.length; i++) {
+                if (this.points[i].value != 0) {
+                    result.push(this.points[i].seriesName + ': ' +
+                        this.points[i].value);
+                }
+            }
+
+            if (result.length) {
+                return result.join('\n')
+            }
+
+        });
         chart.padding().top('15px');
         // hidden labels statistic if all series enabled false
         chart.listen('legenditemmouseup', function () {
@@ -384,45 +503,6 @@
             }
         });
 
-        // create first series with mapped data
-        var series_communication_skills = chart.column(series_communication_skills_data);
-        series_communication_skills.name('Communication Skills');
-
-        // create second series with mapped data
-        var series_technical_knowledge = chart.column(series_technical_knowledge_data);
-        series_technical_knowledge.name('Technical Knowledge');
-
-        // create third series with mapped data
-        var series_teamwork = chart.column(series_teamwork_data);
-        series_teamwork.name('Teamwork');
-
-        // create fourth series with mapped data
-        var series_meeting_deadline = chart.column(series_meeting_deadline_data);
-        series_meeting_deadline.name('Meeting Deadline');
-
-        // create fifth series with mapped data
-        var series_problem_solving = chart.column(series_problem_solving_data);
-        series_problem_solving.name('Problem Solving');
-
-        // create sixth series with mapped data
-        var series_punctuality = chart.column(series_punctuality_data);
-        series_punctuality.name('Punctuality');
-
-        // create series empty, for eval sum statistic and
-        var series_empty = chart.column(series_empty_data);
-        series_empty.fill(null);
-        series_empty.stroke(null);
-        series_empty.legendItem(null);
-        series_empty.tooltip(null);
-
-        var series_empty_labels = series_empty.labels();
-        series_empty_labels.enabled(true);
-        series_empty_labels.position('top');
-        series_empty_labels.anchor('bottom');
-        series_empty_labels.textFormatter(function () {
-            return this.series.getPoint(this.index).getStat('categoryYSum');
-        });
-
         // gets scroller
         var scroller = chart.xScroller();
         scroller.enabled(true);
@@ -433,55 +513,51 @@
         xZoom.setTo(0, 0.2);
 
         // set container id for the chart
-        chart.container('score-card');
+        chart.container(container);
         // initiate chart drawing
         chart.draw();
     }
+}
 
-    function heightInit() {
-        var mq = window.matchMedia("(min-width: 768px)");
-        var $chart = $('.chart');
-        var $scoreCard = $('#score-card');
-        // sum of padding and margin height
-        var offsetHeight = 45;
+function heightInit() {
+    var mq = window.matchMedia("(min-width: 768px)");
+    var $chart = $('.chart');
+    var $scoreCard = $('#score-card');
+    // sum of padding and margin height
+    var offsetHeight = 45;
 
-        // if parent != iframe
-        if (self === top) {
-            if (mq.matches) {
-                var height = $(window).height() - offsetHeight;
-                $chart.css('height', height / 2);
-                $scoreCard.css('height', 650);
-            } else {
-                $chart.css('height', 350);
-                $scoreCard.css('height', 550);
-            }
+    // if parent != iframe
+    if (self === top) {
+        if (mq.matches) {
+            var height = $(window).height() - offsetHeight;
+            $chart.css('height', height / 2);
+            $scoreCard.css('height', 650);
+        } else {
+            $chart.css('height', 350);
+            $scoreCard.css('height', 550);
         }
     }
+}
 
-    function hidePreloader() {
-        $('#loader-wrapper').fadeOut('slow');
-    }
+function hidePreloader() {
+    $('#loader-wrapper').fadeOut('slow');
+}
 
-    anychart.onDocumentReady(function () {
-        heightInit();
+anychart.onDocumentReady(function () {
+    heightInit();
+    // replace this line with your data
+    var rawData = employees_data();
+    // draw dashboard
+    human_resources_dashboard(rawData);
+});
 
-        create_gender_dept_chart(manufacture_dept_male, manufacture_dept_female, 'Gender - Manufacture Dept.', 'manufacture-dept');
-        create_gender_dept_chart(sales_dept_male, sales_dept_female, 'Gender - Sales Dept.', 'sales-dept');
-        create_gender_dept_chart(engineering_dept_male, engineering_dept_female, 'Gender - Engineering Dept.', 'engineering-dept');
-        create_gender_dept_chart(finance_dept_male, finance_dept_female, 'Gender - Finance Dept.', 'finance-dept');
-        create_salary_chart();
-        create_staff_composition_chart();
-        create_employment_date_chart();
-        create_score_card_chart();
-    });
+$(window).on('load', function () {
+    hidePreloader();
+});
 
-    $(window).on('load', function () {
-        hidePreloader();
-    });
+$(window).resize(function () {
+    heightInit();
+});
 
-    $(window).resize(function () {
-        heightInit();
-    });
 
-})();
 
