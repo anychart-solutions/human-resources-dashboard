@@ -67,8 +67,8 @@ function processData(rawData) {
             department_gender_male.push(0);
             department_gender_female.push(0);
         }
-        if (rank_categories.indexOf(data[i]['rank']) == -1) {
-            rank_categories.push(data[i]['rank']);
+        if (rank_categories.indexOf(data[i]['grade']) == -1) {
+            rank_categories.push(data[i]['grade']);
             rank_values.push(0);
         }
         if (employment_date_categories.indexOf(data[i]['employment-date']) == -1) {
@@ -118,7 +118,7 @@ function processData(rawData) {
 
     for (i = 0; i < rank_categories.length; i++) {
         for (j = 0; j < data.length; j++) {
-            if (rank_categories[i] == data[j]['rank']) {
+            if (rank_categories[i] == data[j]['grade']) {
                 rank_values[i] += 1;
             }
         }
@@ -183,18 +183,18 @@ function processData(rawData) {
 
 function human_resources_dashboard(rawData) {
     var data = processData(rawData);
-    var chart;
 
     create_gender_dept_chart(data, data.dept_categories[0], 'Gender - Manufacture Dept.', 'manufacture-dept');
     create_gender_dept_chart(data, data.dept_categories[1], 'Gender - Sales Dept.', 'sales-dept');
     create_gender_dept_chart(data, data.dept_categories[2], 'Gender - Engineering Dept.', 'engineering-dept');
     create_gender_dept_chart(data, data.dept_categories[3], 'Gender - Finance Dept.', 'finance-dept');
     create_salary_chart(data, 'Number of Employees by Monthly Salary', 'salary');
-    create_rank_composition_chart(data, 'Employees Rank Composition \n Rank: 1-15', 'rank-composition');
+    create_rank_composition_chart(data, 'Employees Composition by Grade', 'grade-composition');
     create_employment_date_chart(data, 'Number of Employees by Year', 'employment-date');
-    create_score_card_chart(data.data_score_info, 'Capability Score Card per Employee \n Score: 0-5', 'score-card');
+    create_score_card_chart(data.data_score_info, 'Employees Comparison by Capability \n Estimates each category of capability in range 0 - 5 scores', 'score-card');
 
     function create_gender_dept_chart(data, dept, title, container) {
+        var chart;
         // set data and chart type
         chart = anychart.pie([
             {name: "Male", value: data[dept + '_male']},
@@ -329,7 +329,7 @@ function human_resources_dashboard(rawData) {
 
         var tooltip = chart.tooltip();
         tooltip.titleFormatter(function () {
-            return this.name + ' rank';
+            return this.name + ' grade';
         });
         tooltip.textFormatter(function () {
             var employees = employees_data();
