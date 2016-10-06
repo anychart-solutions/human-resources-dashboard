@@ -2,6 +2,7 @@
 
 ## Human Resources Dashboard
 Human Resources dashboard provides a large range of employee-related information such as statuses, payrolls, performance etc for HR managers to go over and refer to quickly in the form of graphs and pie charts.
+
 [<img src="http://static.anychart.com/images/github/human-resources.png" alt="Human Resources Dashboard | AnyChart">](http://anychart.com/solutions/human-resources-dashboard/)
 
 ## Further Learning
