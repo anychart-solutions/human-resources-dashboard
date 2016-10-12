@@ -5,7 +5,8 @@ Human Resources dashboard provides a large range of employee-related information
 
 [<img src="http://static.anychart.com/images/github/human-resources.png" alt="Human Resources Dashboard | AnyChart">](http://anychart.com/solutions/human-resources-dashboard/)
 
-## Further Learning
+## Links
+* [Human Resources Dashboard at AnyChart.Com](https://www.anychart.com/solutions/human-resources-dashboard/)
 * [Documentation](https://docs.anychart.com)
 * [JavaScript API Reference](https://api.anychart.com)
 * [Code Playground](https://playground.anychart.com)
