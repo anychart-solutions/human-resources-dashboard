@@ -1,16 +1,12 @@
-body.no-iframe {
+body {
     background-color: #f6f6f6;
 }
 
-body {
+body.iframe {
     background-color: #fff;
 }
 
 .wrapper {
-    padding: 15px 8px;
-}
-
-.no-iframe .wrapper {
     padding: 15px;
 }
 
@@ -20,10 +16,6 @@ body {
     -webkit-box-shadow: 0 0 5px 0 #ddd;
     box-shadow: 0 0 5px 0 #ddd;
     border-radius: 2px;
-}
-
-.chart.no-iframe {
-    height: 500px;
 }
 
 .chart {
