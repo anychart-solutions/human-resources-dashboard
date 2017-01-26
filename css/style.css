@@ -11,6 +11,7 @@ body.iframe {
 }
 
 .chart_container {
+    margin-top: 5px;
     margin-bottom: 15px;
     background: #fff;
     -webkit-box-shadow: 0 0 5px 0 #ddd;
