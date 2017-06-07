@@ -207,7 +207,7 @@ function human_resources_dashboard(rawData) {
         chart.overlapMode(true);
         // set the insideLabelsOffset
         chart.insideLabelsOffset("-55%");
-        chart.padding().top('15px');
+        chart.padding().top(15).bottom(15);
 
         // set chart labels settings
         var labels = chart.labels();
@@ -249,8 +249,8 @@ function human_resources_dashboard(rawData) {
         // create bar chart
         chart = anychart.bar();
         // set chart title text settings
-        chart.title(title).padding().bottom('20px');
-        chart.padding().top('15px');
+        chart.title(title).padding().bottom(20);
+        chart.padding().top(15).bottom(15);
 
         var data_chart = [];
 
@@ -325,7 +325,7 @@ function human_resources_dashboard(rawData) {
         chart.title(title);
         // create empty area in pie chart
         chart.innerRadius('65%');
-        chart.padding().top('15px');
+        chart.padding().top(15).bottom(15);
 
         var tooltip = chart.tooltip();
         tooltip.titleFormatter(function () {
@@ -386,7 +386,7 @@ function human_resources_dashboard(rawData) {
         chart.yScale().minimum(0);
         chart.yScale().ticks().interval(10);
         chart.yAxis().minorTicks().enabled(true);
-        chart.padding().top('15px');
+        chart.padding().top(15).bottom(15);
 
         var data_chart = [];
 
@@ -480,6 +480,7 @@ function human_resources_dashboard(rawData) {
         chart.yScale().stackMode('value');
         // set chart title text settings
         chart.title(title).padding().bottom('20px');
+        chart.padding().top(15).bottom(15);
         chart.xAxis().labels().rotation(-90);
         chart.interactivity().hoverMode('byX');
         // turn on legend
@@ -499,7 +500,6 @@ function human_resources_dashboard(rawData) {
             }
 
         });
-        chart.padding().top('15px');
         // hidden labels statistic if all series enabled false
         chart.listen('legenditemmouseup', function () {
             var series_count = chart.getSeriesCount();
