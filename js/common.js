@@ -354,8 +354,8 @@ function human_resources_dashboard(rawData) {
             data.employees_count + '</span>');
         label_1.position("center");
         label_1.anchor("center");
-        label_1.offsetX("-5px");
-        label_1.offsetY("0px");
+        label_1.offsetX(-5);
+        label_1.offsetY(-15);
         label_1.useHtml(true);
 
         // set chart label settings
@@ -363,8 +363,8 @@ function human_resources_dashboard(rawData) {
         label_2.text('<span style="20px; color: #bbb;">Employees</span>');
         label_2.position("center");
         label_2.anchor("center");
-        label_2.offsetX("-5px");
-        label_2.offsetY("25px");
+        label_2.offsetX(-5);
+        label_2.offsetY(10);
         label_2.useHtml(true);
 
         chart.overlapMode(true);
