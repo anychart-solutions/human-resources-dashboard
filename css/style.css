@@ -6,6 +6,10 @@ body.iframe {
     background-color: #fff;
 }
 
+.iframe .wrapper {
+    padding: 0 7px;
+}
+
 .wrapper {
     padding: 15px 10px;
 }
