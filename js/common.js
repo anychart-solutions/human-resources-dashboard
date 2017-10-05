@@ -204,7 +204,6 @@ function human_resources_dashboard(rawData) {
         chart.title(title);
         // create empty area in pie chart
         chart.innerRadius('65%');
-        chart.overlapMode(true);
         // set the insideLabelsOffset
         chart.insideLabelsOffset("-55%");
         chart.padding().top('15px');
@@ -215,7 +214,7 @@ function human_resources_dashboard(rawData) {
         labels.fontColor("#60727B");
         labels.position("outside");
         labels.fontWeight('bold');
-        labels.textFormatter(function () {
+        labels.format(function () {
             return this.value
         });
 
@@ -277,18 +276,17 @@ function human_resources_dashboard(rawData) {
 
         var tooltip = series.tooltip();
         // set tooltip formatter
-        tooltip.titleFormatter(function () {
+        tooltip.titleFormat(function () {
             return this.x
         });
-        tooltip.textFormatter(function () {
+        tooltip.format(function () {
             return parseInt(this.value) + ' employees';
         });
-        tooltip.position('right').anchor('left');
-        tooltip.offsetX(5).offsetY(0);
+        tooltip.position('right').anchor('left-center');
         tooltip.title().align('center');
 
         // set yAxis labels formatter
-        chart.yAxis().labels().textFormatter(function () {
+        chart.yAxis().labels().format(function () {
             return this.value.toLocaleString();
         });
         chart.interactivity().hoverMode('byX');
@@ -328,10 +326,10 @@ function human_resources_dashboard(rawData) {
         chart.padding().top('15px');
 
         var tooltip = chart.tooltip();
-        tooltip.titleFormatter(function () {
+        tooltip.titleFormat(function () {
             return this.name + ' grade';
         });
-        tooltip.textFormatter(function () {
+        tooltip.format(function () {
             var employees = employees_data();
             return 'Employees: ' + this.value + '\n' + 'Percent value: ' +
                 (this.value / employees.length * 100).toFixed(2) + '%';
@@ -344,7 +342,7 @@ function human_resources_dashboard(rawData) {
         labels.fontWeight('bold');
         labels.fontColor("#60727B");
         labels.position("outside");
-        labels.textFormatter(function () {
+        labels.format(function () {
             return this.value
         });
 
@@ -367,7 +365,6 @@ function human_resources_dashboard(rawData) {
         label_2.offsetY("25px");
         label_2.useHtml(true);
 
-        chart.overlapMode(true);
         // set the insideLabelsOffset
         chart.insideLabelsOffset("-55%");
         // set container id for the chart
@@ -419,16 +416,16 @@ function human_resources_dashboard(rawData) {
         chart.tooltip().positionMode('point');
 
         // set tooltip formatter
-        series.tooltip().titleFormatter(function () {
+        series.tooltip().titleFormat(function () {
             return this.x
         });
-        series.tooltip().textFormatter(function () {
+        series.tooltip().format(function () {
             return parseInt(this.value) + ' employees';
         });
-        series.tooltip().position('topCenter').anchor('centerBottom').offsetX('-10px');
+        series.tooltip().position('topCenter').anchor('centerBottom');
         series.tooltip().title().align('center');
         // set yAxis labels formatter
-        chart.yAxis().labels().textFormatter(function () {
+        chart.yAxis().labels().format(function () {
             return this.value.toLocaleString();
         });
 
@@ -470,7 +467,7 @@ function human_resources_dashboard(rawData) {
                 series_empty_labels.enabled(true);
                 series_empty_labels.position('top');
                 series_empty_labels.anchor('bottom');
-                series_empty_labels.textFormatter(function () {
+                series_empty_labels.format(function () {
                     return this.series.getPoint(this.index).getStat('categoryYSum');
                 });
             }
@@ -484,21 +481,7 @@ function human_resources_dashboard(rawData) {
         chart.interactivity().hoverMode('byX');
         // turn on legend
         chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
-        chart.tooltip().displayMode('union').textFormatter(function () {
-            var result = [];
-
-            for (var i = 0; i < this.points.length; i++) {
-                if (this.points[i].value != 0) {
-                    result.push(this.points[i].seriesName + ': ' +
-                        this.points[i].value);
-                }
-            }
-
-            if (result.length) {
-                return result.join('\n')
-            }
-
-        });
+        chart.tooltip().displayMode('union').format('{%SeriesName}: {%Value}');
         chart.padding().top('15px');
         // hidden labels statistic if all series enabled false
         chart.listen('legenditemmouseup', function () {
