@@ -474,7 +474,9 @@ function human_resources_dashboard(rawData) {
         }
 
         // force chart to stack values by Y scale.
-        chart.yScale().stackMode('value');
+        chart.yScale()
+            .stackMode('value')
+            .stackDirection('reverse');
         // set chart title text settings
         chart.title(title).padding().bottom('20px');
         chart.xAxis().labels().rotation(-90);
