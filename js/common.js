@@ -289,7 +289,7 @@ function human_resources_dashboard(rawData) {
         chart.yAxis().labels().format(function () {
             return this.value.toLocaleString();
         });
-        chart.interactivity().hoverMode('byX');
+        chart.interactivity().hoverMode('by-x');
         chart.tooltip().positionMode('point');
         // set scale minimum
         chart.yScale().minimum(0);
@@ -422,7 +422,7 @@ function human_resources_dashboard(rawData) {
         series.tooltip().format(function () {
             return parseInt(this.value) + ' employees';
         });
-        series.tooltip().position('topCenter').anchor('centerBottom');
+        series.tooltip().position('center-top').anchor('center-bottom');
         series.tooltip().title().align('center');
         // set yAxis labels formatter
         chart.yAxis().labels().format(function () {
@@ -465,8 +465,8 @@ function human_resources_dashboard(rawData) {
 
                 var series_empty_labels = series_empty.labels();
                 series_empty_labels.enabled(true);
-                series_empty_labels.position('top');
-                series_empty_labels.anchor('bottom');
+                series_empty_labels.position('center-top');
+                series_empty_labels.anchor('center-bottom');
                 series_empty_labels.format(function () {
                     return this.series.getPoint(this.index).getStat('categoryYSum');
                 });
@@ -480,7 +480,7 @@ function human_resources_dashboard(rawData) {
         // set chart title text settings
         chart.title(title).padding().bottom('20px');
         chart.xAxis().labels().rotation(-90);
-        chart.interactivity().hoverMode('byX');
+        chart.interactivity().hoverMode('by-x');
         // turn on legend
         chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
         chart.tooltip().displayMode('union').format('{%SeriesName}: {%Value}');
@@ -510,7 +510,7 @@ function human_resources_dashboard(rawData) {
         // gets scroller
         var scroller = chart.xScroller();
         scroller.enabled(true);
-        scroller.position('beforeAxes');
+        scroller.position('before-axes');
 
         // turn it on
         var xZoom = chart.xZoom();
@@ -562,6 +562,5 @@ $(window).on('load', function () {
 $(window).resize(function () {
     heightInit();
 });
-
 
 
