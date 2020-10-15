@@ -9,6 +9,7 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,13 +17,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <meta name="author" content="anychart.com">
+    <meta name="description"
+        content="Human Resources dashboard provides a large range of employee-related information such as statuses, payrolls, performance etc for HR managers to go over and refer to quickly in the form of graphs and pie charts. | Fullscreen version">
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Human Resources Dashboard</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- AnyChart UI -->
     <link rel="stylesheet" href="node_modules/anychart/dist/css/anychart-ui.min.css">
@@ -38,81 +41,84 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
-<div id="loader-wrapper" class="anychart-loader">
-    <div class="rotating-cover">
-        <div class="rotating-plane">
-            <div class="chart-row"><span class="chart-col green"></span><span class="chart-col orange"></span><span
-                    class="chart-col red"></span></div>
+    <div id="loader-wrapper" class="anychart-loader">
+        <div class="rotating-cover">
+            <div class="rotating-plane">
+                <div class="chart-row"><span class="chart-col green"></span><span class="chart-col orange"></span><span
+                        class="chart-col red"></span></div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="wrapper">
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="chart_container">
-                <div class="chart" id="manufacture-dept"></div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="chart_container">
+                    <div class="chart" id="manufacture-dept"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="chart_container">
+                    <div class="chart" id="sales-dept"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 ">
+                <div class="chart_container">
+                    <div class="chart" id="engineering-dept"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 ">
+                <div class="chart_container">
+                    <div class="chart" id="finance-dept"></div>
+                </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="chart_container">
-                <div class="chart" id="sales-dept"></div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="chart_container">
+                    <div class="chart" id="salary"></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="chart_container">
+                    <div class="chart" id="grade-composition"></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="chart_container">
+                    <div class="chart" id="employment-date"></div>
+                </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 ">
-            <div class="chart_container">
-                <div class="chart" id="engineering-dept"></div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 ">
-            <div class="chart_container">
-                <div class="chart" id="finance-dept"></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="chart_container">
+                    <div class="chart" id="score-card"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <div class="chart_container">
-                <div class="chart" id="salary"></div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="chart_container">
-                <div class="chart" id="grade-composition"></div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="chart_container">
-                <div class="chart" id="employment-date"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="chart_container">
-                <div class="chart" id="score-card"></div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-<script src="node_modules/anychart/dist/js/anychart-base.min.js"></script>
-<script src="node_modules/anychart/dist/js/anychart-exports.min.js"></script>
-<script src="node_modules/anychart/dist/js/anychart-ui.min.js"></script>
+    <script src="node_modules/anychart/dist/js/anychart-base.min.js"></script>
+    <script src="node_modules/anychart/dist/js/anychart-exports.min.js"></script>
+    <script src="node_modules/anychart/dist/js/anychart-ui.min.js"></script>
 
-<script src="dummy-data.js"></script>
-<script src="js/common.js"></script>
+    <script src="dummy-data.js"></script>
+    <script src="js/common.js"></script>
 
-<!-- This library enables the automatic resizing of the height and width of
+    <!-- This library enables the automatic resizing of the height and width of
 both same and cross domain iFrames to fit their contained content.   -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
 
 </body>
+
 </html>
