@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/anychart-solutions/human-resources-dashboard#readme",
   "dependencies": {
-    "anychart": "^8.0.0"
+    "anychart": "latest"
   }
 }
